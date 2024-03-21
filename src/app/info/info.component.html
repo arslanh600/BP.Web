@@ -1,0 +1,24 @@
+<h2>Token Information</h2>
+
+<div *ngIf="tokenData">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Total Supply</th>
+        <th>Circulating Supply</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let token of tokenData">
+        <td>{{ token.name }}</td>
+        <td>{{ this.formatWeiToEther(token.totalSupply) }}</td> <!-- Format total supply -->
+        <td>{{ this.formatWeiToEther(token.circulatingSupply) }}</td> <!-- Format circulating supply -->
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="!tokenData">
+  <p>Loading token data...</p>
+</div>

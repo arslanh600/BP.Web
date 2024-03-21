@@ -1,0 +1,15 @@
+<h2>Update Token Data</h2>
+
+<button class="btn btn-primary" [disabled]="updating" (click)="updateTokenData()">Update Token Data</button>
+
+<div *ngIf="updating" class="mt-3">
+  <p>Updating token data...</p>
+</div>
+
+<div *ngIf="success" class="mt-3">
+  <p class="text-success">Token data updated successfully!</p>
+</div>
+
+<div *ngIf="error" class="mt-3">
+  <p class="text-danger">{{ error }}</p>
+</div>
